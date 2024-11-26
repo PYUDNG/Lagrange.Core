@@ -89,7 +89,7 @@ public class OneBotSigner : SignProvider
 
         if (json.TryGetProperty("version", out JsonElement versionJson))
         {
-            if (versionJson.GetString() != version) throw new Exception("Signer version mismatch");
+            if (versionJson.GetString() != version) throw new Exception("Signer version mismatch" + " server:" + versionJson.GetString() + " current:" + version);
         }
         else
         {
